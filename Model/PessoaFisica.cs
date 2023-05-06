@@ -33,6 +33,9 @@ namespace BancoFullStack.Model
             // var idade =diferencaDeTempo.TotalDays /365.25;
             // return idade >=18;
         }
+        public override string ResumoCliente(){
+            return $"{base.ResumoCliente()} | Cpf: {CPF} | Nome: {Nome} | DataNascimento: {DataNascimento.ToShortDateString()}" ;
+        }
 
     }
 }

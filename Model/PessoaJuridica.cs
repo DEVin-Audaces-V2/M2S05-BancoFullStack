@@ -21,5 +21,8 @@ namespace BancoFullStack.Model
             RazaoSocial = razaoSocial;
             InscricaoEstadual = inscricaoEstadual;
         }
-  }
+        public override string ResumoCliente(){
+            return $"{base.ResumoCliente()}| CNPJ: {CNPJ}| Razão Social: {RazaoSocial}| IE:  {InscricaoEstadual}" ;
+        }
+    }
 }

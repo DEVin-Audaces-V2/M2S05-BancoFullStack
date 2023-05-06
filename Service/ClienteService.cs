@@ -1,11 +1,17 @@
 using BancoFullStack.Model;
+using BancoFullStack.Interface;
 
 namespace BancoFullStack.Service
 {
-    public class ClienteService
+    public class ClienteService : IClienteService
     {
         private static List<Cliente> _clientes = new List<Cliente>();
 
+        public ClienteService()
+        {
+            _clientes.Add(new PessoaFisica(1,"Rua ", "123", "456", "Vitor", new DateTime(2005,05,5)));
+            _clientes.Add(new PessoaJuridica(5,"Rua ", "123", "456", "Senai","4697"));
+        }
         public void CriarConta(){
             Console.WriteLine("Qual o tipo de conta que deseja Criar? ");
             Console.WriteLine("1 - Pessoa Física ");

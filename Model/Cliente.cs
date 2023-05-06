@@ -22,7 +22,7 @@ namespace BancoFullStack.Model
             Saldo = 0;
         }
 
-        public string ResumoCliente(){
+        public virtual string ResumoCliente(){
             return $"Numero Conta: {NumeroConta} | End: {Endereco} | Tel: {Telefone} | Saldo: {Saldo.ToString("C2")}";
         }
     }
