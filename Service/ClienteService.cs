@@ -77,8 +77,6 @@ namespace BancoFullStack.Service
             cliente.Endereco = Console.ReadLine();
             Console.WriteLine("Digite o Telefone");
             cliente.Telefone = Console.ReadLine();
-            Console.WriteLine("Digite o Saldo");
-            cliente.Saldo = Decimal.Parse(Console.ReadLine());
             return cliente;
         }
     }

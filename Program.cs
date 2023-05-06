@@ -4,6 +4,7 @@ using BancoFullStack.Interface;
 
 
 IClienteService clienteService = new ClienteService();
+ITransacaoService transacaoService = new TransacaoService(clienteService);
 
 string opcao;
 do{
@@ -11,6 +12,8 @@ Console.WriteLine("\n\nBem Vindo ao banco Fullstack, Escolha uma opção para co
 Console.WriteLine("1 - Abrir Conta");
 Console.WriteLine("2 - Consultar Conta");
 Console.WriteLine("3 - Listar Todas as contas");
+Console.WriteLine("5 - Adicionar Transacao");
+Console.WriteLine("6 - Exibir Extrato");
 Console.WriteLine("4 - Sair\n");
 opcao = Console.ReadLine();
 SelecaoMenu(opcao);
@@ -39,6 +42,12 @@ void SelecaoMenu(string opcao){
       break;
     case "4":
       break;
+    case "5":
+      transacaoService.AdicionarTransacao();
+    break;
+    case "6":
+      transacaoService.ExibirExtrato();
+    break;
     default: 
       Console.WriteLine("Opção Inválida");
       break;

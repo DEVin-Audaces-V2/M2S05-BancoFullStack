@@ -7,14 +7,24 @@ namespace BancoFullStack.Model
         public int NumeroConta { get; set; }
         public string Endereco { get; set; }
         public string Telefone { get; set; }
-        public decimal Saldo { get; set; }
+        public decimal Saldo { get { return GetSaldo();} private set{} }
+        public List<Transacao> Extrato { get; set; }
 
+        public decimal GetSaldo(){
+            decimal saldo = 0;
+            foreach(var transacao in Extrato){
+                saldo += transacao.Valor;
+            }
+
+            return saldo;
+        }
+      
         public Cliente()
         {
-            
+            Extrato = new List<Transacao>();
         }
 
-        public Cliente(int numeroConta, string endereco, string telefone)
+        public Cliente(int numeroConta, string endereco, string telefone) :this()
         {
             NumeroConta = numeroConta;
             Endereco = endereco;
